@@ -5,21 +5,21 @@
 class Wifi < Formula
   desc "Cross-platform WiFi diagnostic CLI tool"
   homepage "https://github.com/okisdev/wifi"
-  version "0.1.1"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/okisdev/wifi/releases/download/v0.1.1/wifi_0.1.1_darwin_amd64.tar.gz"
-      sha256 "036259d576f8e56bcfbd0b16c5402c77efdb3fcb10e1ba9c8ab3f853cbeae984"
+      url "https://github.com/okisdev/wifi/releases/download/v0.2.1/wifi_0.2.1_darwin_amd64.tar.gz"
+      sha256 "274c82d1603b38a162f5ce87cc26802fba87e3342778555e6553be61f6feed4e"
 
       define_method(:install) do
         bin.install "wifi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/okisdev/wifi/releases/download/v0.1.1/wifi_0.1.1_darwin_arm64.tar.gz"
-      sha256 "68ab840cd9cabb2e717433b7d236f463dce284152ef2b0bb93e16da33d06e3fe"
+      url "https://github.com/okisdev/wifi/releases/download/v0.2.1/wifi_0.2.1_darwin_arm64.tar.gz"
+      sha256 "6a2b1b545d5187f903987b4a4b01f352521652e51ded1872f820e52c569d09d4"
 
       define_method(:install) do
         bin.install "wifi"
@@ -29,15 +29,15 @@ class Wifi < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/okisdev/wifi/releases/download/v0.1.1/wifi_0.1.1_linux_amd64.tar.gz"
-      sha256 "e9cc2dcd3e9359a3e4d3eed7ce394c66c5d242618cc58d9f626901c03140fbb1"
+      url "https://github.com/okisdev/wifi/releases/download/v0.2.1/wifi_0.2.1_linux_amd64.tar.gz"
+      sha256 "53c02f3d67dc29251011b799af042545fd9ecad027583b1c114711976b302d2a"
       define_method(:install) do
         bin.install "wifi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/okisdev/wifi/releases/download/v0.1.1/wifi_0.1.1_linux_arm64.tar.gz"
-      sha256 "0e7502b34b175f0bdbb05c6ee66102639a15ebfa21ef5de38759a008347e16c8"
+      url "https://github.com/okisdev/wifi/releases/download/v0.2.1/wifi_0.2.1_linux_arm64.tar.gz"
+      sha256 "e005cb44c121369b58a9b9f62824c3cb569aa81f18a45c8ec5728b51433b217e"
       define_method(:install) do
         bin.install "wifi"
       end
