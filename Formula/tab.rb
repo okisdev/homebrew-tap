@@ -7,11 +7,11 @@ class Tab < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/okisdev/tab/releases/download/v0.3.2/tab_v0.3.2_darwin_arm64.tar.gz"
-      sha256 "752d11bd707878aee63f20d1a3727824617d2bb3f6743f525288122c2db7cad4"
+      sha256 "d65d4cc8b9567773816720d5483883d200e08b4573fa3e7416549e254084a5da"
     end
     if Hardware::CPU.intel?
       url "https://github.com/okisdev/tab/releases/download/v0.3.2/tab_v0.3.2_darwin_amd64.tar.gz"
-      sha256 "7b94374af79f9a589e8d18e3e98a9a8924bb294aab4624daa665ff80e3ef5d29"
+      sha256 "455db46dc333c285471f8d53eb249a2e6d8c64d3bfe4ca9841cf7fd5e2a337de"
     end
   end
 
