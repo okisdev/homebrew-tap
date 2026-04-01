@@ -1,17 +1,17 @@
 class Tab < Formula
   desc "Terminal autocomplete plugin with fuzzy history matching"
   homepage "https://github.com/okisdev/tab"
-  version "0.4.0"
+  version "0.4.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/okisdev/tab/releases/download/v0.4.0/tab_v0.4.0_darwin_arm64.tar.gz"
-      sha256 "2f6af8caba38cbffce20bb91170861462c8c633b6caedbe3dffc0b04c8bc17ed"
+      url "https://github.com/okisdev/tab/releases/download/v0.4.1/tab_v0.4.1_darwin_arm64.tar.gz"
+      sha256 "01c82b157121148c7184fdc6dcaac167d0d81062c14644eedc60c21b2d83cbb8"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/okisdev/tab/releases/download/v0.4.0/tab_v0.4.0_darwin_amd64.tar.gz"
-      sha256 "10d6c71e255660ba80651281fa778ce88aa63b0afdde85cb179792e5a976c6d2"
+      url "https://github.com/okisdev/tab/releases/download/v0.4.1/tab_v0.4.1_darwin_amd64.tar.gz"
+      sha256 "ccfc2aef2f5baece9b190d26730c3f83a47484c50528c20819148f010d07fa8b"
     end
   end
 
