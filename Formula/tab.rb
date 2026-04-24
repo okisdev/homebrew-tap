@@ -1,17 +1,26 @@
 class Tab < Formula
-  desc "Terminal autocomplete plugin with fuzzy history matching"
+  desc "Cross-platform terminal autocomplete plugin with fuzzy history matching"
   homepage "https://github.com/okisdev/tab"
-  version "0.4.2"
+  version "0.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/okisdev/tab/releases/download/v0.4.2/tab_v0.4.2_darwin_arm64.tar.gz"
-      sha256 "85a9750db36be9d46afd3b5086e68c195c21aad85dc31d1486be1f22ac18f854"
+      url "https://github.com/okisdev/tab/releases/download/v0.5.0/tab_v0.5.0_darwin_arm64.tar.gz"
+      sha256 "5e36959d0bbc85a3d4f730a4e7f6e627dd87dfbae7f6b235465b79e533a96de7"
+    else
+      url "https://github.com/okisdev/tab/releases/download/v0.5.0/tab_v0.5.0_darwin_amd64.tar.gz"
+      sha256 "ae9a78aed47cac4fdee58f3ec495a9ce30a441a210d45829d29389c8bc42c853"
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/okisdev/tab/releases/download/v0.4.2/tab_v0.4.2_darwin_amd64.tar.gz"
-      sha256 "8176d0c89f30b4a359964eb2fef99a81db2c201d8e3fa938620c72608a6b3012"
+  end
+
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://github.com/okisdev/tab/releases/download/v0.5.0/tab_v0.5.0_linux_arm64.tar.gz"
+      sha256 "80d5f5bdf521d3c3494ea9cd2b48a9a558e99cc2064f102f866a765c2df599ff"
+    else
+      url "https://github.com/okisdev/tab/releases/download/v0.5.0/tab_v0.5.0_linux_amd64.tar.gz"
+      sha256 "8817d5c5b7a05f01addc903d293e22d891655c6f5f5a84d9a597eab68422d77f"
     end
   end
 
@@ -22,10 +31,12 @@ class Tab < Formula
 
   def caveats
     <<~EOS
-      To activate tab, add to your ~/.zshrc:
-        eval "\$(tab init zsh)"
+      activate tab in your shell:
+        zsh:  eval "\$(tab init zsh)"   # ~/.zshrc
+        bash: eval "\$(tab init bash)"  # ~/.bashrc
+        fish: tab init fish > ~/.config/fish/conf.d/tab.fish
 
-      Then install the background service:
+      then install the background service:
         tab install
     EOS
   end
