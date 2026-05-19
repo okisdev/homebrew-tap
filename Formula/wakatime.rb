@@ -1,26 +1,26 @@
 class Wakatime < Formula
   desc "Headless WakaTime tracker"
   homepage "https://github.com/okisdev/wakatime"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/okisdev/wakatime/releases/download/v0.1.1/wakatime_v0.1.1_darwin_arm64.tar.gz"
-      sha256 "10ba1081559833be736f0063ecc927426019b782768d8555ce51978c4e815bd6"
+      url "https://github.com/okisdev/wakatime/releases/download/v0.1.2/wakatime_v0.1.2_darwin_arm64.tar.gz"
+      sha256 "fb8fead0e4fb91a66e6627726f33a62352c16651bd4a6c5877ace7017f608770"
     else
-      url "https://github.com/okisdev/wakatime/releases/download/v0.1.1/wakatime_v0.1.1_darwin_amd64.tar.gz"
-      sha256 "3f7bd991555e5a74df20fe8795992b6fe8fc5d631a6337a792f3b0ba3166ee62"
+      url "https://github.com/okisdev/wakatime/releases/download/v0.1.2/wakatime_v0.1.2_darwin_amd64.tar.gz"
+      sha256 "900534ec6c9ba13e251d3a8f1fffb12dc1848be86fea73981a602a37b0c1ec8c"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/okisdev/wakatime/releases/download/v0.1.1/wakatime_v0.1.1_linux_arm64.tar.gz"
-      sha256 "a8a3aa40eca2554e713d5b6cb83c7e9bb22b8c36327f1de73976db2fdcb65014"
+      url "https://github.com/okisdev/wakatime/releases/download/v0.1.2/wakatime_v0.1.2_linux_arm64.tar.gz"
+      sha256 "5c6db55e18089390fc199287a7085e1d4497951fbd769fc42b0e5a86f9a11dce"
     else
-      url "https://github.com/okisdev/wakatime/releases/download/v0.1.1/wakatime_v0.1.1_linux_amd64.tar.gz"
-      sha256 "ac47df97076683bf2932e9efb9132dfd2d110a7212f6a7a47f1009d543d7b4a8"
+      url "https://github.com/okisdev/wakatime/releases/download/v0.1.2/wakatime_v0.1.2_linux_amd64.tar.gz"
+      sha256 "b9c6c5d40f26b69fa3e9eaf2fa5ce12a6c60f4da1a3b4b574b5a5b05b34b0f78"
     end
   end
 
@@ -51,6 +51,7 @@ class Wakatime < Formula
   end
 
   service do
+    name macos: "com.okisdev.wakatime", linux: "wakatime"
     run [opt_bin/"wakatime", "run"]
     keep_alive true
     log_path var/"log/wakatime.log"
